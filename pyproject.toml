@@ -1,0 +1,23 @@
+[project]
+name = "crossmath_layout"
+version = "0.1.0"
+description = "Crossmath Layout Generator"
+authors = [
+    { name = "wngzwng", email = "wngzwng@outlook.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.3.3",
+    "tqdm>=4.67.1",
+]
+
+[project.scripts]
+crossmath-layout = "crossmath_layout:main"
+crossmath-layout-generator = "crossmath_layout.main.generator_layout:main"
+
+[build-system]
+requires = ["setuptools>=64.0.0", "wheel"]  # 关键修改
+build-backend = "setuptools.build_meta"     # 关键修改
+
+[tool.setuptools.packages.find]
+where = ["src"]  # 显式指定 src 目录
